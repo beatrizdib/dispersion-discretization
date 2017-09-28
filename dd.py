@@ -3,7 +3,9 @@ import numpy as np
 class DispersionDiscretization:
     def __init__(self):
         pass
-    #index must be a list containing the index numbers from each column to be selected from the array, and X must be an array in the format of a list, in which each list within the main list must be a line of the array
+    #index must be a list containing the index numbers from each column to be selected from the array
+    #X must be an array typed in the format of a list, in which each list within the main list must be a line of the array
+    #y is the fraction typed in as a decimal number which the standard deviation from each column will be multiplied by
     def fit (self, X, index, y):
         mean_list = []
         sd_list = []
