@@ -3,10 +3,10 @@ import numpy as np
 class DispersionDiscretization:
     def __init__(self):
         pass
-    #index must be a list containing the index numbers from each column to be selected from the array
+    #index_list must be a list containing the index numbers from each column from the array to be modified
     #X must be an array typed in the format of a list, in which each list within the main list must be a line of the array
-    #y is the fraction typed in as a decimal number which the standard deviation from each column will be multiplied by
-    def fit (self, X, index, y):
+    #y must be a number which the standard deviation from each column will be divided by
+    def fit (self, X, index_list, y):
         mean_list = []
         sd_list = []
         y_list =[]
@@ -16,7 +16,7 @@ class DispersionDiscretization:
             i=+1
             m = np.mean(Xlinha[:,e])
             sd = np.std(Xlinha[:,e])
-            w =(y[i])*sd
+            w =sd/(y[i])
             y_list.append(w)
             mean_list.append (m)
             sd_list.append (sd)
