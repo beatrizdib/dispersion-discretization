@@ -12,7 +12,7 @@ class DispersionDiscretization:
         lmbda_list =[]
         Xlinha = np.array(X)
         i=0
-        for e in index:
+        for e in index_list:
             i=+1
             m = np.mean(Xlinha[:,e])
             sd = np.std(Xlinha[:,e])
@@ -22,7 +22,6 @@ class DispersionDiscretization:
             sd_list.append (sd)
         print mean_list
         print sd_list
-        print lmda_list
         #print np.mean(Xlinha[:,0])
 
 dd = DispersionDiscretization()
