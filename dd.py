@@ -17,7 +17,7 @@ class DispersionDiscretization:
                 raise (ValueError("All indices must be integers or floats"))
         for e in lmbda_list:
             if not (type(e) is int or type(e) is float):
-                raise (ValueError("All lmbdas must be integersor floats"))
+                raise (ValueError("All lmbdas must be integers or floats"))
         for i in xrange(len(X)):
             if len(X[i]) != len(X[0]):
                 raise(IndexError("All lines in the array must have the same length"))
@@ -44,16 +44,18 @@ class DispersionDiscretization:
         print mean_list
         print sd_list
 
+if __name__ == '__main__':
 
+	dd = DispersionDiscretization()
 
-dd = DispersionDiscretization()
-X = [[1,2,3],[3,2,2],[3,2,2],[3,2,2]]
+	X = input("Please enter an array: ")
+	index_list = input("Please enter a list of indices: ")
+	lmbda_list = input("Please enter a list of lmbdas: ")
 
-try:
-
-    dd.fit(X, [1, 2], [1,0.5])
-except IndexError as ie:
-    print ie
-except ValueError as ve:
-    print ve 
+	try:
+		dd.fit(X, index_list, lmbda_list)
+	except IndexError as ie:
+		print ie
+	except ValueError as ve:
+		print ve 
 
